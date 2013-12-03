@@ -26,3 +26,10 @@ yum_package 'oracle-instantclient12.1-basic' do
   source File.join(Chef::Config[:file_cache_path], node['oracle-instantclient']['basic-rpm'])
   action :install
 end
+
+cookbook_file '/etc/profile.d/oracle-instantclient.sh' do
+    source 'profile.d/oracle-instantclient.sh'
+    owner 'root'
+    group 'root'
+    mode '0644'
+end
