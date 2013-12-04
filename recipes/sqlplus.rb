@@ -17,6 +17,10 @@
 # limitations under the License.
 #
 
+class Chef::Recipe
+    include OracleUtils
+end
+
 include_recipe "oracle-instantclient"
 
 remote_file File.join(Chef::Config[:file_cache_path], node['oracle-instantclient']['sqlplus-rpm']) do
@@ -28,3 +32,5 @@ yum_package 'oracle-instantclient12.1-sqlplus' do
   source File.join(Chef::Config[:file_cache_path], node['oracle-instantclient']['sqlplus-rpm'])
   action :install
 end
+
+install_alternatives

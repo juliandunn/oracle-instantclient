@@ -28,6 +28,8 @@ Attributes
 * `node['oracle-instantclient']['public-url']` - The URL of where you are hosting the RPMs
 * `node['oracle-instantclient']['sqlplus-rpm']` - The filename of the SQL*Plus RPM
 * `node['oracle-instantclient']['basic-rpm']` - The filename of the basic Instant Client RPM
+* `node['oracle-instantclient']['version'] - The version of Oracle e.g. "12.1" - as used by rpm 
+   installation prefix in "/usr/lib/oracle/<version>"
 
 Recipes
 =======
@@ -41,11 +43,6 @@ sqlplus
 -------
 
 The sqlplus recipe will install both the Instant Client and SQL*Plus.
-
-Bugs
-====
-
-`sqlplus` (or `sqlplus64` if you're on a 64-bit platform) doesn't work out of the box without setting `LD_LIBRARY_PATH`.
 
 Author and License
 ==================

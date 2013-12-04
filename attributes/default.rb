@@ -20,3 +20,4 @@
 default['oracle-instantclient']['public-url'] = nil
 default['oracle-instantclient']['sqlplus-rpm'] = node['machine'] == 'x86_64' ? 'oracle-instantclient12.1-sqlplus-12.1.0.1.0-1.x86_64.rpm' : 'oracle-instantclient12.1-basic-12.1.0.1.0-1.i386.rpm'
 default['oracle-instantclient']['basic-rpm'] = node['machine'] == 'x86_64' ? 'oracle-instantclient12.1-basic-12.1.0.1.0-1.x86_64.rpm' : 'oracle-instantclient12.1-basic-12.1.0.1.0-1.i386.rpm'
+default['oracle-instantclient']['version'] = '12.1'
