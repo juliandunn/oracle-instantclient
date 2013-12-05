@@ -30,6 +30,7 @@ Attributes
 * `node['oracle-instantclient']['basic-rpm']` - The filename of the basic Instant Client RPM
 * `node['oracle-instantclient']['version'] - The version of Oracle e.g. "12.1" - as used by rpm 
    installation prefix in "/usr/lib/oracle/<version>"
+* `node['oracle-instantclient']['sdk-rpm']` - The filename of the basic development libraries (used by ruby recipe)
 
 Recipes
 =======
