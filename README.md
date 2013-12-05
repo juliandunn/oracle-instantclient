@@ -28,6 +28,7 @@ Attributes
 * `node['oracle-instantclient']['public-url']` - The URL of where you are hosting the RPMs
 * `node['oracle-instantclient']['sqlplus-rpm']` - The filename of the SQL*Plus RPM
 * `node['oracle-instantclient']['basic-rpm']` - The filename of the basic Instant Client RPM
+* `node['oracle-instantclient']['sdk-rpm']` - The filename of the basic development libraries (used by ruby recipe)
 
 Recipes
 =======
