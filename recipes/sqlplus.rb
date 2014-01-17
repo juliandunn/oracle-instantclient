@@ -33,4 +33,22 @@ yum_package 'oracle-instantclient12.1-sqlplus' do
   action :install
 end
 
+execute "ldconfig" do
+  command "ldconfig"
+  action :nothing
+end
+
+client_arch = node['kernel']['machine'] == "x86_64" ? "client64" : "client"
+template '/etc/ld.so.conf.d/oracle-instantclient-86_64.conf' do
+  source 'ld.so.conf.d/oracle-instantclient-86_64.conf.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  variables ({
+      :version => node['oracle-instantclient']['version'],
+      :client_arch => client_arch
+  })
+  notifies :run, "execute[ldconfig]"
+end
+
 install_alternatives

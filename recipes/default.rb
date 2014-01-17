@@ -17,17 +17,6 @@
 # limitations under the License.
 #
 
-client_arch = node[:kernel][:machine] == "x86_64" ? "client64" : "client"
-template '/etc/ld.so.conf.d/oracle-instantclient-86_64.conf' do
-    source 'ld.so.conf.d/oracle-instantclient-86_64.conf.erb'
-    owner 'root'
-    group 'root'
-    mode '0644'
-    variables ({
-        :version => node['oracle-instantclient']['version'],
-        :client_arch => client_arch
-    })
-end
 
 remote_file File.join(Chef::Config[:file_cache_path], node['oracle-instantclient']['basic-rpm']) do
   source node['oracle-instantclient']['public-url'] + node['oracle-instantclient']['basic-rpm']
