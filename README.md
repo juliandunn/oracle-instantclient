@@ -40,6 +40,16 @@ default
 
 The default recipe installs only the basic Instant Client.
 
+ruby
+----
+
+The ruby recipe will install the OCI8 driver for Ruby. You need a compiler on the system, since this will build native extensions against the development libraries.
+
+sdk
+---
+
+The sdk recipe will install Instant Client's devel package.
+
 sqlplus
 -------
 
