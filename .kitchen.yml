@@ -1,0 +1,38 @@
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+
+platforms:
+  - name: centos-6.5
+  - name: centos-6.5-i386
+  - name: centos-5.10
+  - name: centos-5.10-i386
+
+suites:
+  - name: default
+    run_list:
+      - recipe[oracle-instantclient]
+    attributes:
+      oracle-instantclient:
+        public-url: "http://10.0.2.2/~<%= ENV['USER'] %>/binaries/"
+
+  - name: ruby
+    run_list:
+      - recipe[oracle-instantclient::ruby]
+    attributes:
+      oracle-instantclient:
+        public-url: "http://10.0.2.2/~<%= ENV['USER'] %>/binaries/"
+
+  - name: sdk
+    run_list:
+      - recipe[oracle-instantclient::sdk]
+    attributes:
+      oracle-instantclient:
+        public-url: "http://10.0.2.2/~<%= ENV['USER'] %>/binaries/"
+
+  - name: sqlplus
+    run_list:
+      - recipe[oracle-instantclient::sqlplus]
+    attributes:
+      oracle-instantclient:
+        public-url: "http://10.0.2.2/~<%= ENV['USER'] %>/binaries/"
