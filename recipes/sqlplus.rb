@@ -18,7 +18,7 @@
 #
 
 class Chef::Recipe
-    include OracleUtils
+  include OracleUtils
 end
 
 include_recipe "oracle-instantclient"
