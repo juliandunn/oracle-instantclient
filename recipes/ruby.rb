@@ -1,8 +1,9 @@
 #
 # Cookbook Name:: oracle-instantclient
 # Recipe:: default
+# Author:: Friedrich Clausen <friedrich.clausen@blackboard.com>
 #
-# Copyright (C) 2013 Opscode, Inc.
+# Copyright (C) 2014 Friedrich Clausen
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

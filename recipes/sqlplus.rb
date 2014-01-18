@@ -1,8 +1,9 @@
 #
 # Cookbook Name:: oracle-instantclient
-# Recipe:: default
+# Recipe:: sqlplus
+# Author:: Julian C. Dunn (<jdunn@getchef.com>)
 #
-# Copyright (C) 2013 Opscode, Inc.
+# Copyright (C) 2013-2014 Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
