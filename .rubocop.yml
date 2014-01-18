@@ -1,0 +1,10 @@
+AlignParameters:
+  Enabled: false
+Encoding:
+  Enabled: false
+HashSyntax:
+  EnforcedStyle: hash_rockets
+LineLength:
+  Max: 250
+MethodLength:
+  Max: 30

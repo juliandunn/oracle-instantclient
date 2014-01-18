@@ -1,3 +1,4 @@
+#
 # Cookbook Name:: oracle-instantclient
 # Recipe:: default
 #
@@ -16,13 +17,12 @@
 # limitations under the License.
 #
 
-include_recipe "oracle-instantclient::sdk"
+include_recipe 'oracle-instantclient::sdk'
 
 # Explicitly set LD_LIBRARY_PATH otherwise the gem won't build
-client_arch = node['kernel']['machine'] == "x86_64" ? "client64" : "client"
+client_arch = node['kernel']['machine'] == 'x86_64' ? 'client64' : 'client'
 ENV['LD_LIBRARY_PATH'] = "/usr/lib/oracle/#{node['oracle-instantclient']['version']}/#{client_arch}/lib"
 
-gem_package "ruby-oci8" do
+gem_package 'ruby-oci8' do
   action :install
 end
-
