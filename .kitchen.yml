@@ -6,7 +6,19 @@ platforms:
   - name: centos-6.5
   - name: centos-6.5-i386
   - name: centos-5.10
+    run_list:
+      - recipe[yum]
+    attributes:
+      yum:
+        main:
+          gpgcheck: false
   - name: centos-5.10-i386
+    run_list:
+      - recipe[yum]
+    attributes:
+      yum:
+        main:
+          gpgcheck: false
 
 suites:
   - name: default
