@@ -5,6 +5,7 @@ This file is used to list changes made in each version of the oracle-instantclie
 v1.0.1 (2014-01-18)
 -------------------
 
+Fix broken SDK install on i386
 
 v1.0.0
 -------------------
