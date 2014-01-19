@@ -2,6 +2,9 @@
   "sources": {
     "oracle-instantclient": {
       "path": "."
+    },
+    "yum": {
+      "locked_version": "3.0.4"
     }
   }
 }
