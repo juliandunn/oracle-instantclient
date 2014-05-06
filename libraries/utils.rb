@@ -23,15 +23,11 @@ include Chef::Mixin::ShellOut
 
 # Helper methods for managing sqlplus
 module OracleUtils
-  def initialize(node)
-    @n = node.to_hash
-  end
-
-  def install_alternatives
+  def install_alternatives(node)
     bin_path = '/usr/bin/sqlplus'
-    client_arch = @n['kernel']['machine'] == 'x86_64' ? 'client64' : 'client'
-    Chef::Log.debug "OracleUtils: node[oracle-instantclient][version] is #{@n['oracle-instantclient']['version']}"
-    alt_path = "/usr/lib/oracle/#{@n['oracle-instantclient']['version']}/#{client_arch}/bin/sqlplus"
+    client_arch = node['kernel']['machine'] == 'x86_64' ? 'client64' : 'client'
+    Chef::Log.debug "OracleUtils: node[oracle-instantclient][version] is #{node['oracle-instantclient']['version']}"
+    alt_path = "/usr/lib/oracle/#{node['oracle-instantclient']['version']}/#{client_arch}/bin/sqlplus"
     install_cmd = "update-alternatives --install #{bin_path} sqlplus #{alt_path} 1000"
     Chef::Log.debug install_cmd
     alternative_exists = shell_out("update-alternatives --display sqlplus | grep #{alt_path}").exitstatus == 0
