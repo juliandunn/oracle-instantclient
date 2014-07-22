@@ -28,6 +28,14 @@ suites:
       oracle-instantclient:
         public-url: "http://10.0.2.2/~<%= ENV['USER'] %>/binaries/"
 
+  - name: perl
+    run_list:
+      - recipe[build-essential]
+      - recipe[oracle-instantclient::perl]
+    attributes:
+      oracle-instantclient:
+        public-url: "http://10.0.2.2/~<%= ENV['USER'] %>/binaries/"
+
   - name: php
     run_list:
       - recipe[build-essential]

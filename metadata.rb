@@ -8,5 +8,7 @@ version '1.0.5'
 
 recipe 'oracle-instantclient::php', 'Add PHP recipe for Oracle Instant Client.'
 recipe 'oracle-instantclient::perl', 'Add Perl recipe for Oracle Instant Client.'
-depends 'php'
+
+depends 'build-essential'
 depends 'cpan'
+depends 'php'
