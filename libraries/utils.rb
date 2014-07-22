@@ -31,10 +31,9 @@ module OracleUtils
     install_cmd = "update-alternatives --install #{bin_path} sqlplus #{alt_path} 1000"
     Chef::Log.debug install_cmd
     alternative_exists = shell_out("update-alternatives --display sqlplus | grep #{alt_path}").exitstatus == 0
-    unless alternative_exists
-      Chef::Log.debug 'OracleUtils: Adding alternative for sqlplus'
-      install_result = shell_out(install_cmd)
-      install_result.exitstatus == 0 || Chef::Application.fatal!('OracleUtils: Failed to set sqlplus alternative', 1)
-    end
+    return unless alternative_exists
+    Chef::Log.debug 'OracleUtils: Adding alternative for sqlplus'
+    install_result = shell_out(install_cmd)
+    install_result.exitstatus == 0 || fail('OracleUtils: Failed to set sqlplus alternative')
   end
 end
