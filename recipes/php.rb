@@ -20,7 +20,7 @@
 # @file
 # Install PHP Oracle Instant Client via Pear.
 #
-include_recipe "php"
+include_recipe 'php'
 include_recipe 'oracle-instantclient::sdk'
 include_recipe 'oracle-instantclient::sqlplus'
 
