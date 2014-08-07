@@ -22,6 +22,7 @@ include_recipe 'oracle-instantclient'
 
 remote_file File.join(Chef::Config[:file_cache_path], node['oracle-instantclient']['sqlplus-rpm']) do
   source node['oracle-instantclient']['public-url'] + node['oracle-instantclient']['sqlplus-rpm']
+  checksum node['oracle-instantclient']['sqlplus-sha256']
   action :create
 end
 

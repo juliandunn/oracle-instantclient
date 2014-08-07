@@ -18,9 +18,16 @@
 # limitations under the License.
 
 default['oracle-instantclient']['public-url'] = nil
+
 default['oracle-instantclient']['sqlplus-rpm'] = node['kernel']['machine'] == 'x86_64' ? 'oracle-instantclient12.1-sqlplus-12.1.0.1.0-1.x86_64.rpm' : 'oracle-instantclient12.1-sqlplus-12.1.0.1.0-1.i386.rpm'
+default['oracle-instantclient']['sqlplus-sha256'] = '517b210c7d5a10637338c885967fd04cf658f7d15e2d966d298aa569bc999adf'
+
 default['oracle-instantclient']['sdk-rpm'] = node['kernel']['machine'] == 'x86_64' ? 'oracle-instantclient12.1-devel-12.1.0.1.0-1.x86_64.rpm' : 'oracle-instantclient12.1-devel-12.1.0.1.0-1.i386.rpm'
+default['oracle-instantclient']['sdk-sha256'] = '17de6f2df55b0b5b55d539f7474e4b81cb4149104b8c5d2c8e4c2bb07bfe2682'
+
 default['oracle-instantclient']['basic-rpm'] = node['kernel']['machine'] == 'x86_64' ? 'oracle-instantclient12.1-basic-12.1.0.1.0-1.x86_64.rpm' : 'oracle-instantclient12.1-basic-12.1.0.1.0-1.i386.rpm'
+default['oracle-instantclient']['basic-sha256'] = '1ef31877b7a37921868372143fa649e2fd71e23550ceffc830ce6200362af43b'
+
 # If this automatic attempt to deduce major version fails
 # then please set manually
 default['oracle-instantclient']['version'] = default['oracle-instantclient']['sqlplus-rpm'].split('-')[1].sub(/instantclient/, '')
